@@ -31,8 +31,8 @@ public class Main {
 			
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {
-				// TODO Auto-generated method stub
-				
+				resp=new File(htmlFolder.getPath()+"\\login.html");
+				client.send(parseFile(resp));	
 			}
 		});
 		
@@ -41,8 +41,8 @@ public class Main {
 			
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {
-				// TODO Auto-generated method stub
-				
+				resp=new File(htmlFolder.getPath()+"\\register.html");
+				client.send(parseFile(resp));	
 			}
 		});
 		

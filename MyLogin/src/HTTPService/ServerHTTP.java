@@ -31,7 +31,7 @@ public class ServerHTTP {
 	public void addRequest(String req,Response r) {
 		String s="/";
 		if(req.charAt(0)!='/'&&req.length()!=1) {
-			s="/?"+req+"=";
+			s=req;
 		}
 		responses.put(s, r);
 		
