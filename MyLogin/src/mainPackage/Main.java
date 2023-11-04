@@ -27,7 +27,7 @@ public class Main {
 				client.send(parseFile(resp));			
 			}
 		});
-		server.addRequest("opcion=login", new Response() {
+		server.addRequest("?opcion=login", new Response() {
 			
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {
@@ -37,7 +37,7 @@ public class Main {
 		});
 		
 		
-		server.addRequest("opcion=register", new Response() {
+		server.addRequest("?opcion=register", new Response() {
 			
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {
