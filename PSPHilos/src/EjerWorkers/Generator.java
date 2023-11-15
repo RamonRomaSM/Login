@@ -34,16 +34,14 @@ public class Generator extends Thread{
 				//ahora es nuestro turno
 				Worker mine=busca();
 				
-				
+				s.release();
 				s2.acquire();
 				mine.libre=false;			
 				mine.n=n;
-				
-				
 				mine.interrupt();
-				s.release();
+				
 				s2.release();
-			
+				
 				
 							
 			} catch (InterruptedException e) {
@@ -56,6 +54,7 @@ public class Generator extends Thread{
 	}	
 	
 	public Worker busca() {
+		
 		boolean encontrado=false;
 		//TODO:	guardar el ultimo libre y empezar desde ahi
 		

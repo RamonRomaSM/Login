@@ -13,10 +13,10 @@ public class Worker extends Thread{
 	
 	public Worker() {
 		super("Worker"+cont);
-		id=cont+"";
-		cont++;
+		id=cont+"";	
 		n="";
 		System.out.println("Worker"+cont);
+		cont++;
 		libre=true;
 		terminar=false;
 	}
@@ -34,18 +34,10 @@ public class Worker extends Thread{
 				try {		
 					
 					System.out.println(this.getName()+" dice: "+(Integer.parseInt(n)*1000));
-					
+					libre=true;
 				} catch (Exception e2) {
 					System.out.println("TERMINANDO...");
-				}
-				
-				
-				
-				
-				
-				libre=true;
-				
-				
+				}		
 				
 			}
 		}
