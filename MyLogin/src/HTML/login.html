@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #prin{
+    border: 1px;
+    border-color: black;
+    border: solid;
+    width: 50%;
+    margin: auto;
+    margin-top: 15%;
+    }
+    #nombre{
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 5%;
+    }
+    #passw{
+        width: 50%;
+        margin-left: 25%;
+        margin-bottom: 5%;
+    }
+    h2{
+        text-align: center;
+
+
+    }
+    body{
+        background-color:gray;
+
+    }
+    #aceptar{
+        width: 20%;
+        margin-left: 40%;
+        margin-bottom: 5%;
+    }
+
+</style>
+
+<body>
+    
+    <div id="prin">
+       
+        <p><h1>Iniciar Sesion</h1></p>
+        <form method="get">
+            <div>
+                <p>(ni el nombre ni la contraseña pueden estar vacios)</p>
+                <input type="hidden" name="login">
+                <label for="nombre"><h2>Nombre:</h2></label>
+                <input type="text" name="nombre" id="nombre" value="">
+
+            
+                <br>
+           
+                <label for="passw"><h2>Contraseña:</h2></label>
+                <input type="password" name="passw" id="passw" value="">
+                <br>
+                <input type="submit" value="Aceptar" id="aceptar">
+
+            </div>
+            <div>
+
+            
+                <form action="" method="get">
+                    <input type="submit" id="atras" name="atras" value="atras">
+                    
+            
+                </form>
+        
+            </div>
+        </form>
+        
+    </div>
+
+   
+
+</body>
+</html>
