@@ -14,8 +14,8 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		
 		
-		int maxWorkers=4;
-		maxGenerators=10;
+		int maxWorkers=10;
+		maxGenerators=20;
 		
 		Worker[]workers=new Worker[maxWorkers];
 		Generator[]generators=new Generator[maxGenerators];
