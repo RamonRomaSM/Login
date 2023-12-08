@@ -11,12 +11,12 @@ public class Client {
 	private Socket soc;
 	private InputStream in;
 	private OutputStream out;
-	
-	public Client(Socket s) throws IOException {
+	private String rawRequest;
+	public Client(Socket s,String rawRequest) throws IOException {
 		soc=s;
 		in=s.getInputStream();
 		out=s.getOutputStream();
-		
+		this.rawRequest=rawRequest;
 		
 		
 	}
@@ -26,6 +26,14 @@ public class Client {
 		out.write(("\r\n").getBytes());	
 		out.write(respContent);
 		out.flush();
+	}
+
+	public String getRawRequest() {
+		return rawRequest;
+	}
+
+	public void setRawRequest(String rawRequest) {
+		this.rawRequest = rawRequest;
 	}
 	
 	
