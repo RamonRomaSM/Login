@@ -12,6 +12,9 @@ import HTTPService.ServerHTTP;
 public class Main {
 	private static DataBase db;
 	private static ServerHTTP server;
+	
+	
+	
 	public static void main(String[] args) {
 		db=new DataBase();		
 		server=new ServerHTTP();
@@ -22,11 +25,7 @@ public class Main {
 	}
 	
 	
-	
-	
-	
-	
-	
+
 	
 	static void addRequests() {		
 		server.addRequest("/", new Response() {			 
