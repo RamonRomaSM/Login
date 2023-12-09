@@ -38,7 +38,6 @@ public class ResponseHandler {
 		try {
 			String r="";
 			try {
-				System.out.println("ME METO");
 				r=req.split("\\?")[0];
 			} catch (Exception e) {
 				e.printStackTrace();
