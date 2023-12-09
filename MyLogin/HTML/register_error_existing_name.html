@@ -87,13 +87,12 @@
         }
     </style>
 </head>
+
 <body>
-    <form id="registrationForm" action="procesar_registro.php" method="post">
+    <form id="registrationForm" action="register" onsubmit="return validateForm()">
         <label for="username">Usuario:</label>
         <input type="text" id="username" name="username" required>
-        
         <div class="error-message">Ese nombre ya está en uso. Por favor, elige otro.</div>
-
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
 
@@ -106,5 +105,19 @@
             <p>¿Ya tienes una cuenta? <a href="volver">Inicia sesión</a></p>
         </div>
     </form>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden. Por favor, inténtalo de nuevo.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
