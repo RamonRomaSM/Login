@@ -22,6 +22,10 @@ public class ServerHTTP {
 	private HashMap<String,Response> responses;
 	private ResponseHandler handler;	
 	private String rawRequest;
+	    
+	
+	
+	
 	
 	public ServerHTTP() {
 		responses=new HashMap<String,Response>();
@@ -34,6 +38,7 @@ public class ServerHTTP {
 		System.out.println("[SERVER] Added request: "+req);
 		
 	}
+	
 	public void initialize() {
 		
 		System.out.println("[SERVER] Handled requests: "+responses.keySet().toString());

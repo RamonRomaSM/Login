@@ -16,8 +16,10 @@ public class ResponseHandler {
 	private File errorLog;
 	private FileWriter logWriter;
 	private FileWriter errorWriter;
-	
 	static HashMap<String, Response> responses;
+	
+	
+	
 	protected ResponseHandler(HashMap<String,Response> resp) throws IOException {	
 		responses=new HashMap<String,Response>();
 		responses=resp;
@@ -34,14 +36,24 @@ public class ResponseHandler {
 	
 	protected void resolve(String req,Socket client,String rawRequest) throws IOException {
 		try {
-			findResponse(req).execute(new Client(client,rawRequest));						
+			String r="";
+			try {
+				System.out.println("ME METO");
+				r=req.split("\\?")[0];
+			} catch (Exception e) {
+				e.printStackTrace();
+				r=req;
+			}
+			System.out.println(r);
+			findResponse(r).execute(new Client(client,rawRequest));						
 			logWriter.write("\rUser: "+client+" Requested: "+req+" "+LocalDateTime.now()+"\r");
 			logWriter.flush();
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.err.println("Request not handled: "+req+"\r");			
 			errorWriter.write("\rRequest not handled: "+req+" "+LocalDateTime.now()+"\r");
 			errorWriter.flush();
+			e.printStackTrace();
+			
 		}
 		
 	}
@@ -51,8 +63,8 @@ public class ResponseHandler {
 	
 	
 	protected Response findResponse(String req) {
-		
 		return responses.get(req);
+			
 	}
 	
 	
