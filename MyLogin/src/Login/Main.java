@@ -12,7 +12,7 @@ import HTTPService.ServerHTTP;
 public class Main {
 	private static DataBase db;
 	private static ServerHTTP server;
-	
+	//TODO: usar el socket del dispositivo cliente para mandarle info
 	
 	
 	public static void main(String[] args) {
