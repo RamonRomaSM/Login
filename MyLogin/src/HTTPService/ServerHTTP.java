@@ -87,7 +87,7 @@ public class ServerHTTP {
 	private void setServerPort() {
 		
 		boolean init=false;
-		int i=0;
+		int i=1025;
 		while(!init) {
 			try {
 				servSock =new ServerSocket(i);
