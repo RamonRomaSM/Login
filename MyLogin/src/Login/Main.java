@@ -28,18 +28,27 @@ public class Main {
 
 	
 	static void addRequests() {		
+		
+		//Landing page
+		
 		server.addRequest("/", new Response() {			 
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {				
 				sendLogin(client);			
 			}
 		});
+		
+		
+		//Return
 		server.addRequest("/volver", new Response() {			 
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {				
 				sendLogin(client);			
 			}
 		});
+		
+		
+		//Try login
 		server.addRequest("/login", new Response() {
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {													
@@ -51,12 +60,18 @@ public class Main {
 				}
 			}
 		});
+		
+		
+		//Register
 		server.addRequest("/gotoRegister", new Response() {			 
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {				
 				sendRegister(client);				
 			}
 		});
+		
+		
+		//Try to create a new account
 		server.addRequest("/register", new Response() {
 			@Override
 			public void execute(Client client) throws NotHandledRequestException, IOException {						
